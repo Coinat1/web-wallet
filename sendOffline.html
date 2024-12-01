@@ -277,7 +277,7 @@
                 if(uiBlock.currency === "NAX") {
                     balance = unit.fromBasic(value, "gwei").toString();
                 } else {
-                    balance = unit.fromBasic(value, "nas").toString(10);
+                    balance = unit.fromBasic(value, "cnta").toString(10);
                 }
 
                 $("#value").val(balance).trigger("input");
@@ -305,7 +305,7 @@
                 var contract = null;
 
                 toaccount = Account.fromAddress(toaddress);
-                if (uiBlock.currency != "NAS") {
+                if (uiBlock.currency != "CNTA") {
 
                     var transfer_amount;
                     if(uiBlock.currency === "NAX") {
@@ -325,7 +325,7 @@
                     gLastGenerateInfo.contract != contract) try {
                         var a = amount.split(".");
                         var amountValid = a.length == 1 || a[1].length <= 18;
-                        if (uiBlock.currency == "NAS") {
+                        if (uiBlock.currency == "CNTA") {
                             if (!amountValid) throw new Error("Invalid value! The minimum unit is wei (1^-18nas) ");
                             tx = new Transaction(parseInt(localSave.getItem("chainId")), gAccount, toaccount.getAddressString(), unit.nasToBasic(amount), parseInt(nonce), gasprice, gaslimit);
                         } else {
