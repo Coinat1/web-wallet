@@ -145,7 +145,7 @@
             var currency = uiBlock.currency;
             var contractAddr = uiBlock.getContractAddr(uiBlock.currency);
             $("#amount").val("").trigger("input");
-            if (currency == "NAS") {
+            if (currency == "CNTA") {
                 neb.api.getAccountState(addr)
                     .then(function (resp) {
                         if (currency != uiBlock.currency) {
