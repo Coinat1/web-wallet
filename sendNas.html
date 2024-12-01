@@ -243,7 +243,7 @@
                         if (resp.error) {
                             throw new Error(resp.error);
                         }
-                        var nas = Unit.fromBasic(resp.balance, "nas").toString(10);
+                        var nas = Unit.fromBasic(resp.balance, "cnta").toString(10);
                         $("#balance").val(nas).trigger("input"); // add comma & unit from value, needs trigger 'input' event if via set o.value
                         $("#nonce").val(parseInt(resp.nonce || 0) + 1);
                     })
@@ -407,7 +407,7 @@
                         neb.api.getAccountState($(".icon-address.from input").val())
                             .then(function (resp) {
                                 // console.log("getAccountState resp: " + JSON.stringify(resp));
-                                var balanceNas = Unit.fromBasic(resp.balance, "nas").toString(10);
+                                var balanceNas = Unit.fromBasic(resp.balance, "cnta").toString(10);
                                 $("#balance").val(balanceNas);
                                 $("#nonce").val(resp.nonce);
                             }).catch(function (err) {
