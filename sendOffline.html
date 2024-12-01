@@ -261,7 +261,7 @@
                 tx = Transaction.prototype.fromProto(val);
                 var to = tx.to.getAddressString();
                 var value = tx.value;
-                var currency = "NAS"
+                var currency = "CNTA"
                 if (tx.data.payload) {
                     var data = eval("var d = " + nebulas.CryptoUtils.toBuffer(tx.data.payload).toString() + "; d");
                     var args = eval("var args = " + data["Args"]+"; args");
